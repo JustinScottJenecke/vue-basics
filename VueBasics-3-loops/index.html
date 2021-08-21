@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" >
+        <title>Cars Generator</title>
+    </head>
+    
+    <body>
+        
+        <div id="app">
+            <!---->
+            <h2>Car List:</h2>
+            <div v-if="display">
+            
+                <!--ForEach Loop - loop through list of Cars-->
+            
+                <ul>
+                    <li v-for="car in carList" :class="{fav:car.isFav}" @click="toggleFav(car)">
+                        <h3>{{car.name}}</h3>
+                        <img :src="car.img" :alt="car.model">
+                        <p>{{car.brand}} - {{car.model}} - R{{car.cost}}k</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <button @click="toggleShowCar">
+                <span v-if="display">Hide Cars</span>
+                <span v-else>Show Cars</span>
+            </button>
+            
+            <!--Attribute binding - allow specific attributes take in dynamic inputs-->
+            <div>
+                <!--<a :href="url">See image gallery for cars</a>-->
+                <a v-bind:href="url">See image gallery for cars</a>
+            </div>
+
+        </div>
+
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+        <script src="app.js"></script>
+
+    </body>
+
+</html>
