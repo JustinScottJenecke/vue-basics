@@ -1,0 +1,11 @@
+.box {
+    background-color: black;
+    color: chartreuse;
+
+    text-align: center;
+    
+    padding-top: 10%;
+    width: 50%;
+    height: 200px;
+    margin: 2%;
+}

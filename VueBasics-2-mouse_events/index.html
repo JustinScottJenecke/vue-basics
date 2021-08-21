@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Cars Generator 2</title>
+    </head>
+    
+    <body>
+        
+        <div id="app">
+            
+            <h2>Hello World</h2>
+            <div v-if="display">
+                <p>{{brand}} - {{name}} - {{model}} - R{{price}}k</p>
+                <br>
+                <button @click="changeModel('FC3S')">change model</button>
+            </div>
+            
+            <button @click=toggleShowCar>
+                <span v-if="display">Hide Cars</span>  
+                <span v-else>Show Cars</span>
+            </button>
+
+            <!--Mouse Events-->
+
+            <!--Mouse Event with parameter-->
+            <div class="box" @mouseover="eventHandler($event, 7)">enter</div>
+            
+            <div class="box" @mouseleave="eventHandler">leave</div>
+            
+            <div class="box" @dblclick="eventHandler">double click</div>
+            
+            <div class="box" @mousemove="mouseMoveHandler"> position - {{x_move}} -  {{y_move}}</div>
+            
+        </div>
+
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+        <script src="app.js"></script>
+
+    </body>
+
+</html>
