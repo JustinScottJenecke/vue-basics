@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cars Generator</title>
+    </head>
+    
+    <body>
+        
+        <div id="app">
+            <!---->
+            <h2>{{greeting}}</h2>
+            <div v-if="display">
+                <p>{{brand}} - {{name}} - {{model}} - R{{price}}k</p>
+                
+                <button v-on:click="price++">increase cost</button>
+                <button v-on:click="price--">decrease cost</button>
+                <br>
+                <button @click="changeCar('Skyline','R32','Nissan',160)">change car</button>
+            </div>
+            
+            <button @click=toggleShowCar>
+                <span v-if="display">Hide Cars</span>
+                <!--<span v-if="!display">Show Cars</span>-->
+                <span v-else>Show Cars</span>
+            </button>
+            
+        </div>
+
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+        <script src="app.js"></script>
+
+    </body>
+
+</html>
